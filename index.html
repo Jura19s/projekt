@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VektorSec | Informacijska sigurnost i cyber zaštita</title>
+<meta
+name="description"
+content="VektorSec pruža profesionalne usluge informacijske sigurnosti, penetration testinga, sigurnosnih procjena, zaštite identiteta, cloud sigurnosti i edukacije zaposlenika."
+>
+<meta
+name="keywords"
+content="cyber security, informacijska sigurnost, penetration testing, phishing, cloud security, sigurnosna procjena, GDPR, Hrvatska"
+>
+<meta name="author" content="VektorSec">
+<meta property="og:title" content="VektorSec | Informacijska sigurnost">
+<meta
+property="og:description"
+content="Zaštitite poslovanje od modernih cyber prijetnji."
+>
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07111f">
+<link
+rel="icon"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2307111f'/%3E%3Cpath d='M50 12L82 25V47C82 68 69 83 50 90C31 83 18 68 18 47V25L50 12Z' fill='%2310b981'/%3E%3Cpath d='M50 27L68 34V48C68 60 60 69 50 74C40 69 32 60 32 48V34L50 27Z' fill='%2307111f'/%3E%3C/svg%3E"
+>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+rel="stylesheet"
+>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: "Inter", Arial, sans-serif; background: #f6f8fb; color: #172033; line-height: 1.65; overflow-x: hidden; } img { max-width: 100%; display: block; } button, input, textarea, select { font: inherit; } button { cursor: pointer; } a { color: inherit; text-decoration: none; } ul { list-style: none; } ::selection { background: #10b981; color: white; } :focus-visible { outline: 3px solid #10b981; outline-offset: 4px; } :root { --dark: #07111f; --dark-2: #0b1728; --dark-3: #102238; --green: #10b981; --green-dark: #059669; --green-light: #34d399; --blue: #2563eb; --purple: #7c3aed; --white: #ffffff; --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-300: #cbd5e1; --gray-400: #94a3b8; --gray-500: #64748b; --gray-600: #475569; --gray-700: #334155; --gray-800: #1e293b; --gray-900: #0f172a; --danger: #ef4444; --warning: #f59e0b; --radius-sm: 8px; --radius: 16px; --radius-lg: 24px; --radius-xl: 32px; --shadow-sm: 0 4px 15px rgba(15, 23, 42, .06); --shadow: 0 15px 40px rgba(15, 23, 42, .09); --shadow-lg: 0 25px 70px rgba(15, 23, 42, .14); --container: 1240px; } .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; } .section { padding: 100px 0; } .section-small { padding: 70px 0; } .text-center { text-align: center; } .muted { color: var(--gray-500); } .green { color: var(--green); } .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: rgba(16, 185, 129, .1); color: var(--green-dark); font-weight: 700; font-size: 13px; letter-spacing: .02em; } .badge-dark { background: rgba(16, 185, 129, .12); color: #6ee7b7; } .section-heading { max-width: 760px; margin-bottom: 55px; } .section-heading.center { margin-inline: auto; text-align: center; } .section-heading h2 { margin-top: 15px; font-family: "Space Grotesk", sans-serif; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -.04em; color: var(--gray-900); } .section-heading p { margin-top: 20px; font-size: 18px; color: var(--gray-500); } .grid { display: grid; gap: 25px; } .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 13px 20px; border-radius: 10px; border: 1px solid transparent; font-weight: 700; transition: .25s ease; } .btn-primary { background: var(--green); color: #05251a; } .btn-primary:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(16, 185, 129, .25); } .btn-dark { background: var(--dark); color: white; } .btn-dark:hover { background: var(--dark-3); transform: translateY(-2px); } .btn-outline { border-color: var(--gray-300); background: white; } .btn-outline:hover { border-color: var(--green); color: var(--green-dark); } .btn-white { background: white; color: var(--dark); } .btn-white:hover { transform: translateY(-2px); } header { position: sticky; top: 0; z-index: 1000; background: rgba(7, 17, 31, .94); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,.07); } .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 30px; } .logo { display: flex; align-items: center; gap: 12px; color: white; font-weight: 800; font-family: "Space Grotesk", sans-serif; font-size: 21px; } .logo-icon { width: 38px; height: 38px; display: grid; place-items: center; background: var(--green); color: var(--dark); border-radius: 11px; font-weight: 900; } .logo small { display: block; color: #8fa3ba; font-size: 9px; letter-spacing: .18em; font-family: "Inter", sans-serif; } .nav-links { display: flex; align-items: center; gap: 24px; } .nav-links a { color: #d5deea; font-size: 14px; font-weight: 600; transition: .2s; } .nav-links a:hover { color: var(--green-light); } .nav-actions { display: flex; align-items: center; gap: 12px; } .nav-phone { color: white; font-weight: 700; font-size: 14px; } .mobile-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.1); background: transparent; color: white; border-radius: 10px; font-size: 21px; } .hero { position: relative; overflow: hidden; background: radial-gradient(circle at 75% 20%, rgba(16,185,129,.18), transparent 25%), radial-gradient(circle at 15% 80%, rgba(37,99,235,.12), transparent 30%), var(--dark); color: white; padding: 95px 0 100px; } .hero::before { content: ""; position: absolute; inset: 0; opacity: .18; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; } .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 70px; align-items: center; } .hero-content h1 { margin-top: 20px; font-family: "Space Grotesk", sans-serif; font-size: clamp(45px, 6vw, 76px); line-height: .98; letter-spacing: -.055em; } .hero-content h1 span { color: var(--green-light); } .hero-content > p { max-width: 680px; margin: 27px 0; color: #aebed1; font-size: 19px; } .hero-buttons { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; } .hero-trust { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 35px; color: #93a6bb; font-size: 13px; } .hero-trust strong { color: white; } .security-dashboard { position: relative; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.055); border-radius: 25px; padding: 22px; box-shadow: 0 35px 90px rgba(0,0,0,.35); } .dashboard-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.08); } .dashboard-title { font-weight: 800; } .status { display: inline-flex; align-items: center; gap: 7px; color: #86efac; font-size: 12px; font-weight: 700; } .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 5px rgba(34,197,94,.12); } .dashboard-score { display: grid; grid-template-columns: 150px 1fr; gap: 25px; align-items: center; padding: 30px 0; } .score-circle { width: 145px; height: 145px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at center, #0c1a2c 55%, transparent 56%), conic-gradient(var(--green) 0 87%, #24364d 87% 100%); } .score-number { font-family: "Space Grotesk", sans-serif; font-size: 38px; font-weight: 700; } .score-label { font-size: 11px; color: #91a5bc; text-transform: uppercase; letter-spacing: .1em; } .dashboard-bars { display: grid; gap: 17px; } .bar-item label { display: flex; justify-content: space-between; margin-bottom: 7px; color: #bdcbd9; font-size: 12px; } .bar { height: 7px; background: #22354b; border-radius: 99px; overflow: hidden; } .bar span { display: block; height: 100%; border-radius: inherit; background: var(--green); } .dashboard-events { display: grid; gap: 9px; } .event { display: flex; justify-content: space-between; gap: 15px; padding: 12px 14px; background: rgba(255,255,255,.045); border-radius: 9px; color: #b7c5d5; font-size: 12px; } .event strong { color: white; } .trust-strip { background: white; border-bottom: 1px solid var(--gray-200); } .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 28px 0; } .trust-item { padding: 10px 30px; border-right: 1px solid var(--gray-200); } .trust-item:last-child { border-right: none; } .trust-item strong { display: block; font-family: "Space Grotesk", sans-serif; font-size: 28px; } .trust-item span { color: var(--gray-500); font-size: 13px; } .services-grid { grid-template-columns: repeat(3, 1fr); } .service-card { position: relative; padding: 30px; background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: .3s; } .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: rgba(16,185,129,.3); } .service-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 14px; background: #ecfdf5; color: var(--green-dark); font-size: 24px; } .service-card h3 { margin-bottom: 10px; font-family: "Space Grotesk", sans-serif; font-size: 21px; } .service-card p { color: var(--gray-500); font-size: 14px; } .service-card ul { margin-top: 20px; display: grid; gap: 8px; } .service-card li { color: var(--gray-600); font-size: 13px; } .service-card li::before { content: "✓"; margin-right: 8px; color: var(--green); font-weight: 800; } .process-section { background: var(--gray-900); color: white; } .process-section .section-heading h2 { color: white; } .process-section .section-heading p { color: #94a3b8; } .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; } .process-card { position: relative; padding: 30px; border-top: 1px solid #26364a; } .process-card:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 30px; color: var(--green); font-size: 25px; } .process-number { font-family: "Space Grotesk", sans-serif; font-size: 14px; color: var(--green); font-weight: 700; } .process-card h3 { margin: 18px 0 10px; font-size: 20px; } .process-card p { color: #8ea0b5; font-size: 14px; } .why-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; } .why-visual { min-height: 490px; position: relative; border-radius: var(--radius-xl); overflow: hidden; background: linear-gradient(135deg, rgba(16,185,129,.18), transparent), var(--dark); padding: 30px; } .terminal { position: absolute; inset: 45px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: #091421; overflow: hidden; } .terminal-top { height: 45px; display: flex; align-items: center; gap: 7px; padding: 0 16px; border-bottom: 1px solid rgba(255,255,255,.08); } .terminal-top i { width: 9px; height: 9px; border-radius: 50%; background: #64748b; } .terminal-body { padding: 25px; color: #6ee7b7; font-family: monospace; font-size: 12px; line-height: 2; } .terminal-body .white { color: #e2e8f0; } .check-list { display: grid; gap: 20px; } .check-item { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; } .check-icon { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: #ecfdf5; color: var(--green-dark); font-weight: 900; } .check-item h3 { font-size: 18px; margin-bottom: 5px; } .check-item p { color: var(--gray-500); font-size: 14px; } .sectors-section { background: var(--gray-100); } .sectors-grid { grid-template-columns: repeat(4, 1fr); } .sector-card { padding: 25px; background: white; border-radius: 16px; border: 1px solid var(--gray-200); } .sector-card strong { display: block; margin-bottom: 7px; } .sector-card span { color: var(--gray-500); font-size: 13px; } .stats-section { background: var(--dark); color: white; } .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; } .stat { padding: 20px; } .stat strong { display: block; font-family: "Space Grotesk", sans-serif; font-size: clamp(38px, 5vw, 60px); color: var(--green-light); line-height: 1; } .stat span { display: block; margin-top: 12px; color: #94a3b8; font-size: 13px; } .team-grid { grid-template-columns: repeat(3, 1fr); } .team-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; transition: .25s; } .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); } .team-avatar { height: 250px; display: grid; place-items: center; background: radial-gradient(circle at 30% 30%, rgba(16,185,129,.3), transparent 30%), linear-gradient(135deg, #0b1728, #172b43); color: white; font-family: "Space Grotesk", sans-serif; font-size: 58px; font-weight: 700; } .team-content { padding: 24px; } .team-content h3 { font-size: 20px; } .team-role { display: block; margin: 4px 0 12px; color: var(--green-dark); font-size: 13px; font-weight: 700; } .team-content p { color: var(--gray-500); font-size: 13px; } .team-contact { display: inline-block; margin-top: 15px; color: var(--gray-700); font-size: 13px; font-weight: 700; } .references-section { background: var(--gray-100); } .reference-grid { grid-template-columns: repeat(3, 1fr); } .reference-card { padding: 30px; background: white; border-radius: 18px; border: 1px solid var(--gray-200); } .reference-card .tag { display: inline-block; padding: 6px 9px; background: #f1f5f9; border-radius: 7px; color: var(--gray-600); font-size: 11px; font-weight: 700; } .reference-card h3 { margin: 18px 0 10px; font-size: 20px; } .reference-card p { color: var(--gray-500); font-size: 14px; } .reference-result { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--gray-200); color: var(--green-dark); font-weight: 800; font-size: 13px; } .articles-grid { grid-template-columns: repeat(3, 1fr); } .article-card { background: white; border: 1px solid var(--gray-200); border-radius: 18px; overflow: hidden; transition: .25s; } .article-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); } .article-cover { min-height: 190px; padding: 25px; display: flex; align-items: flex-end; background: linear-gradient(135deg, rgba(16,185,129,.4), rgba(7,17,31,.95)); color: white; } .article-cover.blue { background: linear-gradient(135deg, rgba(37,99,235,.45), rgba(7,17,31,.95)); } .article-cover.purple { background: linear-gradient(135deg, rgba(124,58,237,.45), rgba(7,17,31,.95)); } .article-cover strong { font-family: "Space Grotesk", sans-serif; font-size: 23px; } .article-content { padding: 24px; } .article-meta { display: flex; justify-content: space-between; color: var(--gray-400); font-size: 11px; margin-bottom: 12px; } .article-content h3 { font-size: 19px; line-height: 1.25; margin-bottom: 10px; } .article-content p { color: var(--gray-500); font-size: 13px; } .article-link { display: inline-block; margin-top: 18px; color: var(--green-dark); font-weight: 800; font-size: 13px; } .pricing-section { background: var(--gray-100); } .pricing-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } .price-card { position: relative; padding: 34px; background: white; border: 1px solid var(--gray-200); border-radius: 20px; } .price-card.featured { border: 2px solid var(--green); transform: translateY(-8px); box-shadow: var(--shadow); } .popular { position: absolute; top: -13px; left: 25px; padding: 5px 10px; border-radius: 99px; background: var(--green); color: #05251a; font-size: 10px; font-weight: 900; text-transform: uppercase; } .price-card h3 { font-size: 22px; } .price { margin: 18px 0; font-family: "Space Grotesk", sans-serif; font-size: 42px; font-weight: 700; } .price small { color: var(--gray-400); font-family: "Inter", sans-serif; font-size: 12px; font-weight: 500; } .price-description { min-height: 65px; color: var(--gray-500); font-size: 13px; } .price-list { display: grid; gap: 11px; margin: 25px 0; } .price-list li { font-size: 13px; color: var(--gray-600); } .price-list li::before { content: "✓"; color: var(--green); font-weight: 900; margin-right: 9px; } .pricing-note { margin-top: 25px; color: var(--gray-500); font-size: 12px; } .faq { max-width: 900px; margin: auto; } details { background: white; border: 1px solid var(--gray-200); border-radius: 12px; margin-bottom: 12px; overflow: hidden; } summary { cursor: pointer; padding: 21px; font-weight: 800; list-style: none; } summary::-webkit-details-marker { display: none; } details summary::after { content: "+"; float: right; font-size: 20px; color: var(--green-dark); } details[open] summary::after { content: "−"; } details p { padding: 0 21px 21px; color: var(--gray-500); font-size: 14px; } .cta-section { padding: 80px 0; } .cta-box { position: relative; overflow: hidden; padding: 65px; border-radius: 28px; background: radial-gradient(circle at 80% 30%, rgba(16,185,129,.25), transparent 25%), var(--dark); color: white; } .cta-box h2 { max-width: 700px; font-family: "Space Grotesk", sans-serif; font-size: clamp(34px, 5vw, 55px); line-height: 1.05; } .cta-box p { max-width: 650px; margin: 20px 0 28px; color: #a8b9cb; } .contact-section { background: var(--gray-100); } .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; } .contact-info { display: grid; gap: 18px; } .contact-card { padding: 23px; background: white; border: 1px solid var(--gray-200); border-radius: 15px; } .contact-card span { display: block; margin-bottom: 5px; color: var(--gray-400); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; } .contact-card strong { font-size: 16px; } .contact-card a:hover { color: var(--green-dark); } .contact-form { padding: 32px; background: white; border: 1px solid var(--gray-200); border-radius: 20px; box-shadow: var(--shadow-sm); } .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; } .form-group { display: grid; gap: 7px; } .form-group.full { grid-column: 1 / -1; } label { font-size: 13px; font-weight: 700; color: var(--gray-700); } input, textarea, select { width: 100%; padding: 13px 14px; border: 1px solid var(--gray-300); border-radius: 9px; background: white; color: var(--gray-900); transition: .2s; } input:focus, textarea:focus, select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(16,185,129,.1); outline: none; } textarea { min-height: 145px; resize: vertical; } .form-error { display: none; color: var(--danger); font-size: 11px; } .form-status { display: none; margin-top: 15px; padding: 12px; border-radius: 9px; background: #ecfdf5; color: #065f46; font-size: 13px; } .map-wrapper { margin-top: 30px; height: 330px; overflow: hidden; border-radius: 18px; border: 1px solid var(--gray-200); } .map-wrapper iframe { width: 100%; height: 100%; border: 0; } .newsletter { background: #ecfdf5; border-top: 1px solid #d1fae5; border-bottom: 1px solid #d1fae5; } .newsletter-grid { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; } .newsletter h2 { font-family: "Space Grotesk", sans-serif; font-size: 30px; } .newsletter p { color: var(--gray-500); margin-top: 5px; font-size: 14px; } .newsletter-form { display: flex; gap: 8px; } .newsletter-form input { min-width: 280px; } footer { background: var(--dark); color: white; padding-top: 70px; } .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 50px; padding-bottom: 55px; } .footer-brand p { max-width: 370px; margin-top: 18px; color: #8498ae; font-size: 13px; } .footer-title { margin-bottom: 17px; font-weight: 800; } .footer-links { display: grid; gap: 10px; } .footer-links a { color: #8fa1b5; font-size: 13px; transition: .2s; } .footer-links a:hover { color: var(--green-light); } .socials { display: flex; gap: 8px; margin-top: 20px; } .social { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; color: #b8c5d3; font-size: 12px; font-weight: 800; } .social:hover { color: var(--green-light); border-color: var(--green); } .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 20px 0; display: flex; justify-content: space-between; gap: 20px; color: #687b91; font-size: 11px; } .cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 2000; max-width: 1050px; margin: auto; padding: 20px; display: none; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: rgba(7,17,31,.97); color: white; border: 1px solid rgba(255,255,255,.1); border-radius: 15px; box-shadow: 0 30px 80px rgba(0,0,0,.3); } .cookie-banner p { color: #a9b9ca; font-size: 12px; } .cookie-buttons { display: flex; gap: 8px; } .cookie-buttons button { border: 0; padding: 10px 14px; border-radius: 8px; font-weight: 700; } .accept-cookie { background: var(--green); color: #05251a; } .reject-cookie { background: #1b2b3e; color: white; } #backToTop { position: fixed; right: 20px; bottom: 20px; width: 45px; height: 45px; display: none; z-index: 1500; border: none; border-radius: 50%; background: var(--dark); color: white; box-shadow: var(--shadow); } #backToTop:hover { background: var(--green-dark); } .modal { position: fixed; inset: 0; z-index: 3000; display: none; place-items: center; padding: 20px; background: rgba(2,6,23,.72); backdrop-filter: blur(7px); } .modal.active { display: grid; } .modal-content { width: min(760px, 100%); max-height: 85vh; overflow: auto; padding: 35px; background: white; border-radius: 20px; } .modal-header { display: flex; justify-content: space-between; gap: 20px; } .modal-close { width: 38px; height: 38px; border: 1px solid var(--gray-200); background: white; border-radius: 8px; } .modal-content article { margin-top: 25px; } .modal-content article p { margin-bottom: 17px; color: var(--gray-600); } .reveal { opacity: 0; transform: translateY(25px); transition: opacity .7s ease, transform .7s ease; } .reveal.visible { opacity: 1; transform: translateY(0); } @media (max-width: 1050px) { .nav-links { gap: 13px; } .nav-phone { display: none; } .hero-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; } .hero-content { max-width: 800px; } .security-dashboard { max-width: 750px; } .services-grid, .team-grid, .reference-grid, .articles-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); } .sectors-grid { grid-template-columns: repeat(2, 1fr); } .process-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; } .process-card:not(:last-child)::after { display: none; } .footer-grid { grid-template-columns: repeat(2, 1fr); } .newsletter-grid { grid-template-columns: 1fr; } } @media (max-width: 780px) { .container { width: min(100% - 28px, var(--container)); } .section { padding: 70px 0; } .nav { min-height: 68px; } .mobile-toggle { display: block; } .nav-links { position: absolute; left: 14px; right: 14px; top: 76px; display: none; padding: 20px; flex-direction: column; align-items: stretch; background: #0b1728; border: 1px solid rgba(255,255,255,.08); border-radius: 15px; box-shadow: var(--shadow-lg); } .nav-links.active { display: flex; } .nav-links a { padding: 10px; } .nav-actions .btn { display: none; } .hero { padding: 70px 0; } .hero-content h1 { font-size: clamp(43px, 13vw, 65px); } .hero-content > p { font-size: 16px; } .dashboard-score { grid-template-columns: 1fr; justify-items: center; } .dashboard-bars { width: 100%; } .trust-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); } .trust-item { border-bottom: 1px solid var(--gray-200); } .services-grid, .team-grid, .reference-grid, .articles-grid, .pricing-grid, .sectors-grid, .process-grid { grid-template-columns: 1fr; } .price-card.featured { transform: none; } .form-grid { grid-template-columns: 1fr; } .form-group.full { grid-column: auto; } .newsletter-form { flex-direction: column; } .newsletter-form input { min-width: 0; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; } .cookie-banner { grid-template-columns: 1fr; left: 10px; right: 10px; bottom: 10px; } .cookie-buttons { width: 100%; } .cookie-buttons button { flex: 1; } .cta-box { padding: 35px 25px; } } @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }</style>
+</head>
+<body>
+<a
+href="#main"
+style="
+position:absolute;
+left:-9999px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+"
+onfocus="
+this.style.left='20px';
+this.style.top='20px';
+this.style.width='auto';
+this.style.height='auto';
+this.style.padding='12px';
+this.style.background='#10b981';
+this.style.color='#07111f';
+this.style.zIndex='9999';
+"
+>
+Preskoči na sadržaj
+</a>
+<header>
+<div class="container nav">
+<a href="#home" class="logo" aria-label="VektorSec početna stranica">
+<div class="logo-icon">
+V
+</div>
+<div>
+VektorSec
+<small>INFORMATION SECURITY</small>
+</div>
+</a>
+<nav class="nav-links" id="navLinks">
+<a href="#home">Početna</a>
+<a href="#usluge">Usluge</a>
+<a href="#proces">Kako radimo</a>
+<a href="#tim">Tim</a>
+<a href="#cjenik">Cjenik</a>
+<a href="#clanci">Članci</a>
+<a href="#faq">FAQ</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+<div class="nav-actions">
+<a
+href="tel:+38514862040"
+class="nav-phone"
+>
++385 1 4862 040
+</a>
+<a
+href="#kontakt"
+class="btn btn-primary"
+>
+Zatraži procjenu
+</a>
+<button
+class="mobile-toggle"
+id="mobileToggle"
+aria-label="Otvori izbornik"
+aria-expanded="false"
+>
+☰
+</button>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-content reveal">
+<span class="badge badge-dark">
+● Cyber sigurnost za moderno poslovanje
+</span>
+<h1>
+Vaše poslovanje.
+<br>
+<span>Sigurnije.</span>
+</h1>
+<p>
+Pomažemo organizacijama prepoznati, smanjiti i
+kontrolirati cyber rizike prije nego što postanu
+ozbiljan poslovni problem.
+</p>
+<div class="hero-buttons">
+<a
+href="#kontakt"
+class="btn btn-primary"
+>
+Zatražite sigurnosnu procjenu →
+</a>
+<a
+href="#usluge"
+class="btn btn-outline"
+style="background:transparent;color:rgb(59, 59, 59);border-color:#42536a"
+>
+Istražite usluge
+</a>
+</div>
+<div class="hero-trust">
+<span>
+✓ <strong>Stručan pristup</strong>
+</span>
+<span>
+✓ <strong>Jasan izvještaj</strong>
+</span>
+<span>
+✓ <strong>Praktične preporuke</strong>
+</span>
+</div>
+</div>
+<div class="security-dashboard reveal">
+<div class="dashboard-header">
+<div class="dashboard-title">
+Security Overview
+</div>
+<div class="status">
+<span class="status-dot"></span>
+Monitoring active
+</div>
+</div>
+<div class="dashboard-score">
+<div class="score-circle">
+<div style="text-align:center">
+<div class="score-number">
+87
+</div>
+<div class="score-label">
+Risk score
+</div>
+</div>
+</div>
+<div class="dashboard-bars">
+<div class="bar-item">
+<label>
+Endpoint security
+<strong>92%</strong>
+</label>
+<div class="bar">
+<span style="width:92%"></span>
+</div>
+</div>
+<div class="bar-item">
+<label>
+Identity security
+<strong>88%</strong>
+</label>
+<div class="bar">
+<span style="width:88%"></span>
+</div>
+</div>
+<div class="bar-item">
+<label>
+Cloud security
+<strong>81%</strong>
+</label>
+<div class="bar">
+<span style="width:81%"></span>
+</div>
+</div>
+<div class="bar-item">
+<label>
+Employee awareness
+<strong>76%</strong>
+</label>
+<div class="bar">
+<span style="width:76%"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="dashboard-events">
+<div class="event">
+<span>
+Last vulnerability scan
+</span>
+<strong>
+14 min ago
+</strong>
+</div>
+<div class="event">
+<span>
+Critical vulnerabilities
+</span>
+<strong>
+0
+</strong>
+</div>
+<div class="event">
+<span>
+Security recommendations
+</span>
+<strong>
+7 open
+</strong>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="trust-strip">
+<div class="container trust-grid">
+<div class="trust-item">
+<strong>24/7</strong>
+<span>sigurnosna perspektiva</span>
+</div>
+<div class="trust-item">
+<strong>360°</strong>
+<span>procjena sigurnosnog rizika</span>
+</div>
+<div class="trust-item">
+<strong>100%</strong>
+<span>fokus na praktične preporuke</span>
+</div>
+<div class="trust-item">
+<strong>1 cilj</strong>
+<span>sigurnije poslovanje</span>
+</div>
+</div>
+</section>
+<section class="section" id="usluge">
+<div class="container">
+<div class="section-heading reveal">
+<span class="badge">
+Naše usluge
+</span>
+<h2>
+Sigurnost od infrastrukture
+do čovjeka.
+</h2>
+<p>
+Cyber sigurnost nije jedan proizvod. Potrebno je
+kombinirati tehnologiju, procese, ljude i kontinuirano
+praćenje rizika.
+</p>
+</div>
+<div class="grid services-grid">
+<article class="service-card reveal">
+<div class="service-icon">⌁</div>
+<h3>
+Penetration Testing
+</h3>
+<p>
+Kontrolirano testiranje sustava kojim pokušavamo
+pronaći ranjivosti prije nego što ih pronađe netko
+s lošim namjerama.
+</p>
+<ul>
+<li>Web aplikacije</li>
+<li>API sustavi</li>
+<li>Vanjska infrastruktura</li>
+<li>Interna mreža</li>
+<li>Prioritizirani izvještaj</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">◈</div>
+<h3>
+Security Assessment
+</h3>
+<p>
+Sveobuhvatna procjena razine sigurnosti organizacije
+i identifikacija područja koja zahtijevaju poboljšanje.
+</p>
+<ul>
+<li>Procjena infrastrukture</li>
+<li>Analiza procesa</li>
+<li>Risk assessment</li>
+<li>Security roadmap</li>
+<li>Management izvještaj</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">◉</div>
+<h3>
+Cloud Security
+</h3>
+<p>
+Pregled sigurnosne konfiguracije cloud infrastrukture
+i identiteta kako bi se smanjio rizik pogrešnih postavki.
+</p>
+<ul>
+<li>Cloud konfiguracija</li>
+<li>Identity & Access</li>
+<li>Storage sigurnost</li>
+<li>Logging</li>
+<li>Security baseline</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">◎</div>
+<h3>
+Identity Security
+</h3>
+<p>
+Zaštita korisničkih računa, privilegija i pristupa
+poslovnim sustavima.
+</p>
+<ul>
+<li>MFA procjena</li>
+<li>Privileged accounts</li>
+<li>Access review</li>
+<li>Password policy</li>
+<li>Least privilege</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">◇</div>
+<h3>
+Phishing Awareness
+</h3>
+<p>
+Edukacija zaposlenika i simulacije socijalnog
+inženjeringa usmjerene na podizanje svijesti.
+</p>
+<ul>
+<li>Awareness edukacija</li>
+<li>Phishing simulacije</li>
+<li>Izvještaji</li>
+<li>Preporuke</li>
+<li>Follow-up trening</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">◌</div>
+<h3>
+Incident Response
+</h3>
+<p>
+Podrška organizaciji u razumijevanju i koordinaciji
+aktivnosti nakon sigurnosnog incidenta.
+</p>
+<ul>
+<li>Incident triage</li>
+<li>Analiza događaja</li>
+<li>Containment plan</li>
+<li>Lessons learned</li>
+<li>Preventivne mjere</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">▣</div>
+<h3>
+Security Monitoring
+</h3>
+<p>
+Kontinuirano praćenje sigurnosnih događaja i
+definiranje postupaka za reagiranje na rizike.
+</p>
+<ul>
+<li>Log monitoring</li>
+<li>Alerting</li>
+<li>Incident escalation</li>
+<li>Security reporting</li>
+<li>KPI dashboard</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">§</div>
+<h3>
+Compliance & Governance
+</h3>
+<p>
+Pomoć u uspostavljanju sigurnosnih politika,
+kontrola i dokumentacije.
+</p>
+<ul>
+<li>Security policies</li>
+<li>Risk register</li>
+<li>Kontrole</li>
+<li>Audit readiness</li>
+<li>Governance model</li>
+</ul>
+</article>
+<article class="service-card reveal">
+<div class="service-icon">✦</div>
+<h3>
+Security Training
+</h3>
+<p>
+Praktične edukacije za zaposlenike, IT timove i
+management.
+</p>
+<ul>
+<li>Cyber hygiene</li>
+<li>Secure development</li>
+<li>Incident awareness</li>
+<li>Management briefing</li>
+<li>Custom workshops</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section process-section" id="proces">
+<div class="container">
+<div class="section-heading reveal">
+<span class="badge badge-dark">
+Način rada
+</span>
+<h2>
+Od problema do jasnog plana.
+</h2>
+<p>
+Naš pristup nije samo pronaći problem. Cilj je objasniti
+što problem znači za poslovanje i što napraviti dalje.
+</p>
+</div>
+<div class="process-grid">
+<article class="process-card reveal">
+<span class="process-number">
+01 / DISCOVER
+</span>
+<h3>
+Upoznajemo okruženje
+</h3>
+<p>
+Razumijemo poslovne procese, infrastrukturu,
+ključne sustave, korisnike i prioritete.
+</p>
+</article>
+<article class="process-card reveal">
+<span class="process-number">
+02 / ASSESS
+</span>
+<h3>
+Mjerimo rizik
+</h3>
+<p>
+Analiziramo tehničke i organizacijske slabosti te
+ih povezujemo s potencijalnim poslovnim posljedicama.
+</p>
+</article>
+<article class="process-card reveal">
+<span class="process-number">
+03 / PRIORITIZE
+</span>
+<h3>
+Određujemo prioritete
+</h3>
+<p>
+Ne dobivate listu od stotinu problema bez konteksta.
+Dobivate prioritizirani plan.
+</p>
+</article>
+<article class="process-card reveal">
+<span class="process-number">
+04 / IMPROVE
+</span>
+<h3>
+Gradimo otpornost
+</h3>
+<p>
+Pomažemo definirati konkretne mjere i pratiti
+napredak kroz vrijeme.
+</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container why-grid">
+<div class="why-visual reveal">
+<div class="terminal">
+<div class="terminal-top">
+<i></i>
+<i></i>
+<i></i>
+</div>
+<div class="terminal-body">
+<div>
+$ security-scan --target company
+</div>
+<div>
+[OK] discovering assets...
+</div>
+<div>
+[OK] checking authentication...
+</div>
+<div>
+[OK] checking cloud configuration...
+</div>
+<div>
+[WARN] 3 medium findings
+</div>
+<div>
+[OK] no critical findings
+</div>
+<div>
+<span class="white">
+Risk assessment completed.
+</span>
+</div>
+<br>
+<div>
+$ generate-report
+</div>
+<div>
+report.pdf generated
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="section-heading reveal">
+<span class="badge">
+Zašto VektorSec
+</span>
+<h2>
+Sigurnost bez nepotrebne
+kompleksnosti.
+</h2>
+<p>
+Tehnički problemi moraju biti prevedeni u jezik
+poslovanja. Upravo zato naše preporuke stavljamo
+u kontekst rizika, troška i prioriteta.
+</p>
+</div>
+<div class="check-list">
+<div class="check-item reveal">
+<div class="check-icon">✓</div>
+<div>
+<h3>
+Praktične preporuke
+</h3>
+<p>
+Svaki nalaz povezujemo s preporučenim
+sljedećim korakom.
+</p>
+</div>
+</div>
+<div class="check-item reveal">
+<div class="check-icon">✓</div>
+<div>
+<h3>
+Prioritizacija rizika
+</h3>
+<p>
+Fokusiramo se na probleme koji imaju
+najveći potencijalni utjecaj.
+</p>
+</div>
+</div>
+<div class="check-item reveal">
+<div class="check-icon">✓</div>
+<div>
+<h3>
+Razumljiv reporting
+</h3>
+<p>
+Tehnički izvještaj i management sažetak
+prilagođeni su različitim publikama.
+</p>
+</div>
+</div>
+<div class="check-item reveal">
+<div class="check-icon">✓</div>
+<div>
+<h3>
+Dugoročna perspektiva
+</h3>
+<p>
+Cilj nije jednokratni pregled nego
+kontinuirano povećavanje otpornosti.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section sectors-section">
+<div class="container">
+<div class="section-heading center reveal">
+<span class="badge">
+Industrije
+</span>
+<h2>
+Sigurnost prilagođena vašem
+poslovnom modelu.
+</h2>
+<p>
+Različite industrije imaju različite sustave,
+regulativu i prioritete.
+</p>
+</div>
+<div class="grid sectors-grid">
+<div class="sector-card reveal">
+<strong>Financije</strong>
+<span>
+Zaštita podataka, identiteta i kritičnih sustava.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>Zdravstvo</strong>
+<span>
+Sigurnost osjetljivih podataka i dostupnosti sustava.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>IT & SaaS</strong>
+<span>
+Cloud, API, aplikacije i razvojni procesi.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>Proizvodnja</strong>
+<span>
+IT/OT rizici, mreže i kontinuitet poslovanja.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>Trgovina</strong>
+<span>
+Korisnički računi, payment sustavi i infrastruktura.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>Javni sektor</strong>
+<span>
+Upravljanje rizicima i zaštita ključnih usluga.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>Startupovi</strong>
+<span>
+Sigurnosni temelji koji rastu zajedno s kompanijom.
+</span>
+</div>
+<div class="sector-card reveal">
+<strong>SME</strong>
+<span>
+Razumna sigurnost bez nepotrebnog opterećenja.
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section stats-section">
+<div class="container">
+<div class="stats-grid">
+<div class="stat reveal">
+<strong
+data-counter="120"
+>
+0+
+</strong>
+<span>
+sigurnosnih procjena
+</span>
+</div>
+<div class="stat reveal">
+<strong
+data-counter="350"
+>
+0+
+</strong>
+<span>
+identificiranih sigurnosnih nalaza
+</span>
+</div>
+<div class="stat reveal">
+<strong
+data-counter="95"
+>
+0%
+</strong>
+<span>
+klijenata završilo remediation plan
+</span>
+</div>
+<div class="stat reveal">
+<strong
+data-counter="24"
+>
+0/7
+</strong>
+<span>
+fokus na sigurnosne rizike
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="tim">
+<div class="container">
+<div class="section-heading reveal">
+<span class="badge">
+Naš tim
+</span>
+<h2>
+Ljudi iza sigurnosnih odluka.
+</h2>
+<p>
+Primjer strukture tima. Imena, fotografije i kontakt
+podatke potrebno je zamijeniti stvarnim podacima prije
+objave stranice.
+</p>
+</div>
+<div class="grid team-grid">
+<article class="team-card reveal">
+<div class="team-avatar">
+MK
+</div>
+<div class="team-content">
+<h3>
+Marko Kovač
+</h3>
+<span class="team-role">
+Security Lead
+</span>
+<p>
+Fokus na sigurnosnim procjenama,
+penetration testingu i upravljanju rizicima.
+</p>
+<a
+href="mailto:marko@vektorsec.example"
+class="team-contact"
+>
+Kontaktiraj Marka →
+</a>
+</div>
+</article>
+<article class="team-card reveal">
+<div class="team-avatar">
+AN
+</div>
+<div class="team-content">
+<h3>
+Ana Novak
+</h3>
+<span class="team-role">
+Cloud Security Specialist
+</span>
+<p>
+Cloud infrastruktura, identiteti, konfiguracije
+i sigurnosne kontrole.
+</p>
+<a
+href="mailto:ana@vektorsec.example"
+class="team-contact"
+>
+Kontaktiraj Anu →
+</a>
+</div>
+</article>
+<article class="team-card reveal">
+<div class="team-avatar">
+IP
+</div>
+<div class="team-content">
+<h3>
+Ivan Petrović
+</h3>
+<span class="team-role">
+Incident Response Consultant
+</span>
+<p>
+Incident response, analiza događaja i
+unapređenje sigurnosnih procesa.
+</p>
+<a
+href="mailto:ivan@vektorsec.example"
+class="team-contact"
+>
+Kontaktiraj Ivana →
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section references-section">
+<div class="container">
+<div class="section-heading center reveal">
+<span class="badge">
+Primjeri projekata
+</span>
+<h2>
+Sigurnosni problemi pretvoreni
+u konkretne rezultate.
+</h2>
+</div>
+<div class="grid reference-grid">
+<article class="reference-card reveal">
+<span class="tag">
+SaaS
+</span>
+<h3>
+Security assessment web platforme
+</h3>
+<p>
+Procijenili smo vanjsku izloženost, autentikaciju,
+API sloj i sigurnosne konfiguracije.
+</p>
+<div class="reference-result">
+Rezultat: prioritizirani remediation plan
+</div>
+</article>
+<article class="reference-card reveal">
+<span class="tag">
+SME
+</span>
+<h3>
+Phishing awareness program
+</h3>
+<p>
+Kombinacija edukacije, simulacija i mjerenja
+rezultata kroz više ciklusa.
+</p>
+<div class="reference-result">
+Rezultat: bolja sigurnosna svijest zaposlenika
+</div>
+</article>
+<article class="reference-card reveal">
+<span class="tag">
+Cloud
+</span>
+<h3>
+Cloud security baseline
+</h3>
+<p>
+Pregled identiteta, pristupa, storagea, logiranja
+i sigurnosnih konfiguracija.
+</p>
+<div class="reference-result">
+Rezultat: standardizirani security baseline
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="clanci">
+<div class="container">
+<div class="section-heading reveal">
+<span class="badge">
+Security knowledge
+</span>
+<h2>
+Članci i sigurnosne vijesti.
+</h2>
+<p>
+Informacije o phishingu, incidentima, cloud sigurnosti,
+ranjivostima i drugim temama važnima za organizacije.
+</p>
+</div>
+<div class="grid articles-grid">
+<article class="article-card reveal">
+<div class="article-cover">
+<strong>
+Kako reagirati na
+sigurnosni incident?
+</strong>
+</div>
+<div class="article-content">
+<div class="article-meta">
+<span>Incident Response</span>
+<span>08.09.2026.</span>
+</div>
+<h3>
+Prvih nekoliko koraka nakon otkrivanja incidenta
+</h3>
+<p>
+Incident ne treba rješavati nasumično.
+Pogledajte kako strukturirati prve aktivnosti,
+komunikaciju i procjenu situacije.
+</p>
+<a
+href="#article-incident"
+class="article-link"
+data-article="incident"
+>
+Pročitaj članak →
+</a>
+</div>
+</article>
+<article class="article-card reveal">
+<div class="article-cover blue">
+<strong>
+Phishing:
+zašto i dalje funkcionira?
+</strong>
+</div>
+<div class="article-content">
+<div class="article-meta">
+<span>Awareness</span>
+<span>02.09.2026.</span>
+</div>
+<h3>
+Tehnologija nije dovoljna bez sigurnosne svijesti
+</h3>
+<p>
+Najbolji tehnički sustavi ne mogu u potpunosti
+ukloniti rizik pogreške korisnika.
+</p>
+<a
+href="#article-phishing"
+class="article-link"
+data-article="phishing"
+>
+Pročitaj članak →
+</a>
+</div>
+</article>
+<article class="article-card reveal">
+<div class="article-cover purple">
+<strong>
+Cloud sigurnost:
+najčešće pogreške
+</strong>
+</div>
+<div class="article-content">
+<div class="article-meta">
+<span>Cloud Security</span>
+<span>27.08.2026.</span>
+</div>
+<h3>
+Pogrešne konfiguracije koje mogu povećati rizik
+</h3>
+<p>
+Cloud pruža fleksibilnost, ali konfiguracija
+mora biti pod stalnom kontrolom.
+</p>
+<a
+href="#article-cloud"
+class="article-link"
+data-article="cloud"
+>
+Pročitaj članak →
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section pricing-section" id="cjenik">
+<div class="container">
+<div class="section-heading center reveal">
+<span class="badge">
+Okvirni cjenik
+</span>
+<h2>
+Jasni početni rasponi.
+</h2>
+<p>
+Cijene su informativne. Konačna ponuda ovisi o opsegu,
+broju sustava, korisnika, lokacija i potrebnoj dubini
+procjene.
+</p>
+</div>
+<div class="grid pricing-grid">
+<article class="price-card reveal">
+<h3>
+Basic Assessment
+</h3>
+<div class="price">
+490 €
+<small>/ projekt</small>
+</div>
+<p class="price-description">
+Za manje organizacije koje žele osnovni pregled
+sigurnosnog stanja.
+</p>
+<ul class="price-list">
+<li>Osnovni security assessment</li>
+<li>Pregled javne izloženosti</li>
+<li>Osnovni risk report</li>
+<li>Prioritetne preporuke</li>
+<li>Online prezentacija rezultata</li>
+</ul>
+<a href="#kontakt" class="btn btn-outline">
+Zatraži ponudu
+</a>
+</article>
+<article class="price-card featured reveal">
+<span class="popular">
+Najtraženije
+</span>
+<h3>
+Security Review
+</h3>
+<div class="price">
+1.490 €
+<small>/ projekt</small>
+</div>
+<p class="price-description">
+Detaljnija procjena infrastrukture i sigurnosnih
+kontrola.
+</p>
+<ul class="price-list">
+<li>Detaljni security assessment</li>
+<li>Vanjska infrastruktura</li>
+<li>Identity & Access pregled</li>
+<li>Cloud konfiguracija</li>
+<li>Prioritizirani nalazi</li>
+<li>Management izvještaj</li>
+</ul>
+<a href="#kontakt" class="btn btn-primary">
+Zatraži ponudu
+</a>
+</article>
+<article class="price-card reveal">
+<h3>
+Penetration Test
+</h3>
+<div class="price">
+od 2.490 €
+<small>/ projekt</small>
+</div>
+<p class="price-description">
+Kontrolirano tehničko testiranje aplikacija,
+infrastrukture ili API-ja.
+</p>
+<ul class="price-list">
+<li>Scope definiranje</li>
+<li>Manual testing</li>
+<li>Automatizirani testovi</li>
+<li>Validacija nalaza</li>
+<li>Detaljni tehnički izvještaj</li>
+<li>Remediation sastanak</li>
+</ul>
+<a href="#kontakt" class="btn btn-outline">
+Zatraži ponudu
+</a>
+</article>
+</div>
+<p class="pricing-note text-center">
+* Sve cijene su primjer/demo podaci i ne predstavljaju
+stvarnu komercijalnu ponudu.
+</p>
+</div>
+</section>
+<section class="section" id="faq">
+<div class="container">
+<div class="section-heading center reveal">
+<span class="badge">
+FAQ
+</span>
+<h2>
+Česta pitanja.
+</h2>
+</div>
+<div class="faq">
+<details class="reveal">
+<summary>
+Koliko traje sigurnosna procjena?
+</summary>
+<p>
+Ovisi o opsegu projekta. Jednostavniji pregled može
+biti gotov u nekoliko radnih dana, dok detaljniji
+penetration test ili organizacijska procjena može
+trajati nekoliko tjedana.
+</p>
+</details>
+<details class="reveal">
+<summary>
+Trebamo li pripremiti infrastrukturu prije testiranja?
+</summary>
+<p>
+Prije početka definiramo scope, ciljeve, dozvole,
+kontakt osobe, vremenski okvir i pravila testiranja.
+Time smanjujemo rizik neželjenog utjecaja na produkciju.
+</p>
+</details>
+<details class="reveal">
+<summary>
+Dobivamo li izvještaj nakon testiranja?
+</summary>
+<p>
+Da. Tipično pripremamo tehnički izvještaj s nalazima,
+dokazima i preporukama te sažetak prilagođen
+managementu.
+</p>
+</details>
+<details class="reveal">
+<summary>
+Možete li pomoći nakon što pronađemo ranjivosti?
+</summary>
+<p>
+Da. Možemo pomoći u prioritizaciji, planiranju
+remediation aktivnosti i ponovnoj validaciji
+riješenih problema.
+</p>
+</details>
+<details class="reveal">
+<summary>
+Radite li sa startupovima i manjim tvrtkama?
+</summary>
+<p>
+Da. Sigurnosni program može se prilagoditi veličini
+organizacije i realno dostupnom budžetu.
+</p>
+</details>
+<details class="reveal">
+<summary>
+Jesu li podaci na ovoj demo stranici stvarni?
+</summary>
+<p>
+Ne. Ova verzija koristi demonstracijski naziv,
+kontakte, cijene, članove tima i druge podatke.
+Prije produkcijske objave potrebno ih je zamijeniti
+stvarnim podacima.
+</p>
+</details>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<div class="cta-box reveal">
+<h2>
+Ne čekajte incident
+da biste počeli razmišljati o sigurnosti.
+</h2>
+<p>
+Zatražite inicijalni razgovor i zajedno definirajmo
+gdje se trenutno nalazite i koji bi bio najkorisniji
+sljedeći korak.
+</p>
+<a
+href="#kontakt"
+class="btn btn-primary"
+>
+Razgovarajmo o sigurnosti →
+</a>
+</div>
+</div>
+</section>
+<section class="section contact-section" id="kontakt">
+<div class="container">
+<div class="section-heading reveal">
+<span class="badge">
+Kontakt
+</span>
+<h2>
+Razgovarajmo o vašem sigurnosnom izazovu.
+</h2>
+<p>
+Pošaljite upit. U produkcijskoj verziji ovaj obrazac
+treba povezati sa stvarnim backendom ili servisom
+za slanje e-mailova.
+</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-card reveal">
+<span>
+Telefon
+</span>
+<strong>
+<a href="tel:+38514862040">
++385 1 4862 040
+</a>
+</strong>
+</div>
+<div class="contact-card reveal">
+<span>
+E-mail
+</span>
+<strong>
+<a href="mailto:kontakt@vektorsec.example">
+kontakt@vektorsec.example
+</a>
+</strong>
+</div>
+<div class="contact-card reveal">
+<span>
+Adresa
+</span>
+<strong>
+Savska cesta 123<br>
+10000 Zagreb, Hrvatska
+</strong>
+</div>
+<div class="contact-card reveal">
+<span>
+Radno vrijeme
+</span>
+<strong>
+Pon – Pet: 08:00 – 16:00
+</strong>
+</div>
+<div class="contact-card reveal">
+<span>
+Hitni sigurnosni upiti
+</span>
+<strong>
++385 1 4862 040
+</strong>
+</div>
+</div>
+<form
+class="contact-form reveal"
+id="contactForm"
+novalidate
+>
+<div class="form-grid">
+<div class="form-group">
+<label for="name">
+Ime i prezime *
+</label>
+<input
+id="name"
+name="name"
+type="text"
+autocomplete="name"
+placeholder="Ivan Horvat"
+required
+>
+<span
+class="form-error"
+id="nameError"
+>
+Unesite ime i prezime.
+</span>
+</div>
+<div class="form-group">
+<label for="email">
+E-mail *
+</label>
+<input
+id="email"
+name="email"
+type="email"
+autocomplete="email"
+placeholder="ivan@tvrtka.hr"
+required
+>
+<span
+class="form-error"
+id="emailError"
+>
+Unesite ispravnu e-mail adresu.
+</span>
+</div>
+<div class="form-group">
+<label for="company">
+Tvrtka
+</label>
+<input
+id="company"
+name="company"
+type="text"
+autocomplete="organization"
+placeholder="Naziv tvrtke"
+>
+</div>
+<div class="form-group">
+<label for="phone">
+Telefon
+</label>
+<input
+id="phone"
+name="phone"
+type="tel"
+autocomplete="tel"
+placeholder="+385..."
+>
+</div>
+<div class="form-group full">
+<label for="service">
+Zanimaju me
+</label>
+<select
+id="service"
+name="service"
+>
+<option value="">
+Odaberite uslugu
+</option>
+<option>
+Penetration Testing
+</option>
+<option>
+Security Assessment
+</option>
+<option>
+Cloud Security
+</option>
+<option>
+Identity Security
+</option>
+<option>
+Phishing Awareness
+</option>
+<option>
+Incident Response
+</option>
+<option>
+Compliance & Governance
+</option>
+<option>
+Drugo
+</option>
+</select>
+</div>
+<div class="form-group full">
+<label for="message">
+Poruka *
+</label>
+<textarea
+id="message"
+name="message"
+placeholder="Opišite ukratko svoj izazov..."
+required
+></textarea>
+<span
+class="form-error"
+id="messageError"
+>
+Unesite poruku.
+</span>
+</div>
+<div class="form-group full">
+<label
+style="
+display:flex;
+gap:9px;
+align-items:flex-start;
+font-weight:500;
+"
+>
+<input
+id="consent"
+type="checkbox"
+required
+style="width:auto;margin-top:5px"
+>
+<span>
+Slažem se da se podaci koriste isključivo
+radi odgovora na moj upit. *
+</span>
+</label>
+</div>
+<div class="form-group full">
+<button
+type="submit"
+class="btn btn-primary"
+>
+Pošalji upit →
+</button>
+<div
+class="form-status"
+id="contactStatus"
+>
+Hvala! Ovo je demo obrazac. U produkciji
+potrebno je spojiti obrazac na backend ili
+servis za slanje e-mailova.
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="map-wrapper reveal">
+<iframe
+title="Lokacija VektorSec"
+src="https://www.openstreetmap.org/export/embed.html?bbox=15.951%2C45.798%2C15.985%2C45.820&layer=mapnik&marker=45.809%2C15.968"
+loading="lazy"
+></iframe>
+</div>
+</div>
+</section>
+<section class="section-small newsletter">
+<div class="container newsletter-grid">
+<div>
+<h2>
+Cyber sigurnost, bez spama.
+</h2>
+<p>
+Povremeni newsletter s korisnim sigurnosnim informacijama.
+</p>
+</div>
+<form
+class="newsletter-form"
+id="newsletterForm"
+>
+<input
+type="email"
+id="newsletterEmail"
+placeholder="vaš@email.hr"
+aria-label="E-mail za newsletter"
+required
+>
+<button
+class="btn btn-primary"
+type="submit"
+>
+Pretplati me
+</button>
+</form>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div class="footer-brand">
+<a href="#home" class="logo">
+<div class="logo-icon">
+V
+</div>
+<div>
+VektorSec
+<small>INFORMATION SECURITY</small>
+</div>
+</a>
+<p>
+Demonstracijska web stranica profesionalne tvrtke
+za informacijsku sigurnost. Cilj je prikazati kako
+moderna cyber security prezentacijska stranica može
+izgledati.
+</p>
+<div class="socials">
+<a
+class="social"
+href="https://www.instagram.com/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Instagram"
+>
+IG
+</a>
+<a
+class="social"
+href="https://www.facebook.com/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Facebook"
+>
+FB
+</a>
+<a
+class="social"
+href="https://www.linkedin.com/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="LinkedIn"
+>
+IN
+</a>
+</div>
+</div>
+<div>
+<div class="footer-title">
+Navigacija
+</div>
+<div class="footer-links">
+<a href="#home">
+Početna
+</a>
+<a href="#usluge">
+Usluge
+</a>
+<a href="#proces">
+Kako radimo
+</a>
+<a href="#tim">
+Tim
+</a>
+<a href="#cjenik">
+Cjenik
+</a>
+<a href="#clanci">
+Članci
+</a>
+<a href="#kontakt">
+Kontakt
+</a>
+</div>
+</div>
+<div>
+<div class="footer-title">
+Informacije
+</div>
+<div class="footer-links">
+<a href="#faq">
+FAQ
+</a>
+<a href="#privacy">
+Privatnost
+</a>
+<a href="#cookies">
+Kolačići
+</a>
+<a href="#terms">
+Uvjeti korištenja
+</a>
+<a href="#security">
+Security policy
+</a>
+</div>
+</div>
+<div>
+<div class="footer-title">
+Kontakt
+</div>
+<div class="footer-links">
+<a href="tel:+38514862040">
++385 1 4862 040
+</a>
+<a href="mailto:kontakt@vektorsec.example">
+kontakt@vektorsec.example
+</a>
+<a href="#kontakt">
+Savska cesta 123
+</a>
+<a href="#kontakt">
+10000 Zagreb, Hrvatska
+</a>
+<span style="color:#8fa1b5;font-size:13px">
+Pon – Pet: 08:00 – 16:00
+</span>
+</div>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>
+© <span id="year"></span> VektorSec. Sva prava pridržana.
+</span>
+<span>
+Demo projekt — podatke potrebno zamijeniti prije produkcije.
+</span>
+</div>
+</footer>
+<div
+class="cookie-banner"
+id="cookieBanner"
+role="dialog"
+aria-label="Postavke kolačića"
+>
+<div>
+<strong>
+Privatnost i kolačići
+</strong>
+<p>
+Ova demo stranica koristi samo osnovno lokalno spremanje
+postavke kolačića. U stvarnoj produkciji potrebno je
+implementirati odgovarajuću cookie politiku i mehanizam
+privole.
+</p>
+</div>
+<div class="cookie-buttons">
+<button
+class="reject-cookie"
+id="rejectCookies"
+>
+Samo nužni
+</button>
+<button
+class="accept-cookie"
+id="acceptCookies"
+>
+Prihvati
+</button>
+</div>
+</div>
+<button
+id="backToTop"
+aria-label="Povratak na vrh"
+>
+↑
+</button>
+<div
+class="modal"
+id="articleModal"
+aria-hidden="true"
+>
+<div class="modal-content">
+<div class="modal-header">
+<div>
+<span class="badge">
+Security Article
+</span>
+<h2
+id="modalTitle"
+style="
+margin-top:12px;
+font-family:'Space Grotesk',sans-serif;
+"
+></h2>
+</div>
+<button
+class="modal-close"
+id="modalClose"
+aria-label="Zatvori članak"
+>
+×
+</button>
+</div>
+<article id="modalArticle">
+</article>
+</div>
+</div>
+<div
+class="modal"
+id="privacyModal"
+>
+<div class="modal-content">
+<div class="modal-header">
+<h2>
+Pravila privatnosti
+</h2>
+<button
+class="modal-close"
+data-close-modal="privacyModal"
+>
+×
+</button>
+</div>
+<article>
+<p>
+Ova demonstracijska stranica ne predstavlja stvarnu
+politiku privatnosti stvarne organizacije.
+</p>
+<p>
+U stvarnoj implementaciji potrebno je jasno definirati
+koje se osobne informacije prikupljaju, u koju svrhu,
+koliko dugo se čuvaju, tko im može pristupiti i koja
+prava korisnik ima.
+</p>
+<p>
+Kontaktni obrazac treba biti povezan s odgovarajućim
+sustavom za obradu podataka i zaštićen odgovarajućim
+tehničkim i organizacijskim mjerama.
+</p>
+</article>
+</div>
+</div>
+<div
+class="modal"
+id="cookiesModal"
+>
+<div class="modal-content">
+<div class="modal-header">
+<h2>
+Pravila kolačića
+</h2>
+<button
+class="modal-close"
+data-close-modal="cookiesModal"
+>
+×
+</button>
+</div>
+<article>
+<p>
+Kolačići su male tekstualne datoteke koje web stranica
+može spremiti u preglednik korisnika.
+</p>
+<p>
+Ova demo implementacija koristi localStorage samo za
+pamćenje izbora korisnika o prikazu cookie bannera.
+</p>
+<p>
+Produkcijska verzija treba uključivati stvarnu analizu
+korištenih kolačića, pravne osnove, rokove čuvanja i
+odgovarajući sustav privole.
+</p>
+</article>
+</div>
+</div>
+<div
+class="modal"
+id="termsModal"
+>
+<div class="modal-content">
+<div class="modal-header">
+<h2>
+Uvjeti korištenja
+</h2>
+<button
+class="modal-close"
+data-close-modal="termsModal"
+>
+×
+</button>
+</div>
+<article>
+<p>
+Sadržaj ove demonstracijske stranice služi isključivo
+kao primjer web prezentacije.
+</p>
+<p>
+Tekstovi, cijene, kontakti, članovi tima i ostali
+podaci nisu stvarna komercijalna ponuda.
+</p>
+<p>
+Prije objave stvarne stranice potrebno je pripremiti
+konačne pravne tekstove uz odgovarajuću stručnu provjeru.
+</p>
+</article>
+</div>
+</div>
+<div
+class="modal"
+id="securityModal"
+>
+<div class="modal-content">
+<div class="modal-header">
+<h2>
+Security Policy
+</h2>
+<button
+class="modal-close"
+data-close-modal="securityModal"
+>
+×
+</button>
+</div>
+<article>
+<p>
+Sigurnosna politika organizacije treba definirati
+odgovornosti, upravljanje pristupima, zaštitu podataka,
+incident response, sigurnosne kontrole i postupke
+eskalacije.
+</p>
+<p>
+Ovdje je prikazan samo demonstracijski tekst.
+</p>
+</article>
+</div>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear(); const mobileToggle = document.getElementById("mobileToggle"); const navLinks = document.getElementById("navLinks"); mobileToggle.addEventListener("click", function () { const active = navLinks.classList.toggle("active"); mobileToggle.setAttribute( "aria-expanded", active ); mobileToggle.textContent = active ? "×" : "☰"; }); document.querySelectorAll(".nav-links a") .forEach(link => { link.addEventListener("click", function () { navLinks.classList.remove("active"); mobileToggle.setAttribute( "aria-expanded", "false" ); mobileToggle.textContent = "☰"; }); }); const revealElements = document.querySelectorAll(".reveal"); const revealObserver = new IntersectionObserver( entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve( entry.target ); } }); }, { threshold: .12 } ); revealElements.forEach(element => { revealObserver.observe(element); }); const counters = document.querySelectorAll("[data-counter]"); let countersStarted = false; function animateCounters() { if (countersStarted) { return; } countersStarted = true; counters.forEach(counter => { const target = Number(counter.dataset.counter); const isPercent = target === 95; const isHours = target === 24; let current = 0; const increment = Math.max(1, Math.ceil(target / 60)); const interval = setInterval(() => { current += increment; if (current >= target) { current = target; clearInterval(interval); } if (isPercent) { counter.textContent = current + "%"; } else if (isHours) { counter.textContent = current + "/7"; } else { counter.textContent = current + "+"; } }, 25); }); } const statsSection = document.querySelector(".stats-section"); if (statsSection) { const statsObserver = new IntersectionObserver( entries => { if ( entries[0].isIntersecting ) { animateCounters(); statsObserver.disconnect(); } }, { threshold: .35 } ); statsObserver.observe(statsSection); } const contactForm = document.getElementById("contactForm"); const contactStatus = document.getElementById("contactStatus"); function showError(id, show) { const element = document.getElementById(id); if (element) { element.style.display = show ? "block" : "none"; } } contactForm.addEventListener("submit", function(event) { event.preventDefault(); const name = document.getElementById("name"); const email = document.getElementById("email"); const message = document.getElementById("message"); const consent = document.getElementById("consent"); let valid = true; if (name.value.trim().length < 2) { showError("nameError", true); valid = false; } else { showError("nameError", false); } const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!emailRegex.test(email.value.trim())) { showError("emailError", true); valid = false; } else { showError("emailError", false); } if (message.value.trim().length < 10) { showError("messageError", true); valid = false; } else { showError("messageError", false); } if (!consent.checked) { valid = false; alert( "Molimo prihvatite obradu podataka potrebnu za odgovor na upit." ); } if (!valid) { return; } contactStatus.style.display = "block"; contactForm.reset(); contactStatus.scrollIntoView({ behavior: "smooth", block: "center" }); }); const newsletterForm = document.getElementById("newsletterForm"); newsletterForm.addEventListener( "submit", function(event) { event.preventDefault(); const input = document.getElementById("newsletterEmail"); const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!emailRegex.test(input.value.trim())) { alert( "Unesite ispravnu e-mail adresu." ); return; } alert( "Hvala! Newsletter prijava je zaprimljena u demo načinu." ); input.value = ""; } ); const cookieBanner = document.getElementById("cookieBanner"); const acceptCookies = document.getElementById("acceptCookies"); const rejectCookies = document.getElementById("rejectCookies"); const cookieChoice = localStorage.getItem( "vektorsec-cookie-choice" ); if (!cookieChoice) { setTimeout(() => { cookieBanner.style.display = "grid"; }, 800); } acceptCookies.addEventListener( "click", function() { localStorage.setItem( "vektorsec-cookie-choice", "accepted" ); cookieBanner.style.display = "none"; } ); rejectCookies.addEventListener( "click", function() { localStorage.setItem( "vektorsec-cookie-choice", "necessary" ); cookieBanner.style.display = "none"; } ); const backToTop = document.getElementById("backToTop"); window.addEventListener( "scroll", function() { if (window.scrollY > 500) { backToTop.style.display = "grid"; } else { backToTop.style.display = "none"; } } ); backToTop.addEventListener( "click", function() { window.scrollTo({ top: 0, behavior: "smooth" }); } ); const articles = { incident: { title: "Prvih nekoliko koraka nakon otkrivanja sigurnosnog incidenta", content: ` <p> Kada organizacija otkrije potencijalni sigurnosni incident, najvažnije je zadržati kontrolu nad situacijom i izbjeći neorganizirane reakcije. </p> <p> Prvi korak je potvrditi što je poznato, a što je još uvijek samo pretpostavka. Potrebno je odrediti odgovorne osobe, dokumentirati događaje i osigurati relevantne informacije za daljnju analizu. </p> <p> Nakon početne procjene organizacija treba definirati prioritete: zaštitu ključnih sustava, očuvanje relevantnih podataka, ograničavanje potencijalnog utjecaja i komunikaciju prema odgovornim osobama. </p> <p> Nakon stabilizacije situacije slijedi detaljnija analiza, utvrđivanje uzroka i planiranje korektivnih mjera. </p> <p> Važno je da se incident ne promatra samo kao tehnički problem. Njegove poslovne posljedice, komunikacija i kontinuitet poslovanja jednako su važni. </p> ` }, phishing: { title: "Phishing: zašto i dalje funkcionira?", content: ` <p> Phishing napadi iskorištavaju kombinaciju tehničkih i ljudskih faktora. Napadač često pokušava stvoriti osjećaj hitnosti, autoriteta ili straha. </p> <p> Zbog toga sama instalacija sigurnosnog alata nije dovoljna. Organizacije trebaju kombinirati tehničke kontrole, jasne procedure i edukaciju zaposlenika. </p> <p> Kvalitetan awareness program ne bi trebao biti usmjeren na kažnjavanje zaposlenika zbog pogreške. Cilj je stvoriti okruženje u kojem korisnici znaju prepoznati sumnjivu situaciju i znaju kome je prijaviti. </p> <p> Simulacije mogu pomoći organizacijama mjeriti napredak i identificirati područja u kojima je potrebna dodatna edukacija. </p> ` }, cloud: { title: "Cloud sigurnost: najčešće pogreške", content: ` <p> Cloud platforme omogućavaju brzo skaliranje i fleksibilno upravljanje infrastrukturom, ali pogrešne konfiguracije mogu povećati sigurnosni rizik. </p> <p> Jedno od ključnih područja je upravljanje identitetima. Organizacije trebaju redovito pregledavati privilegije, pristupe i račune koji više nisu potrebni. </p> <p> Drugo važno područje je vidljivost. Bez odgovarajućeg logiranja i monitoringa teško je razumjeti što se događa u okruženju. </p> <p> Sigurnosni baseline može pomoći organizaciji standardizirati konfiguracije i lakše identificirati odstupanja. </p> ` } }; const articleModal = document.getElementById("articleModal"); const modalTitle = document.getElementById("modalTitle"); const modalArticle = document.getElementById("modalArticle"); const modalClose = document.getElementById("modalClose"); document.querySelectorAll( "[data-article]" ).forEach(link => { link.addEventListener( "click", function(event) { event.preventDefault(); const id = this.dataset.article; const article = articles[id]; if (!article) { return; } modalTitle.textContent = article.title; modalArticle.innerHTML = article.content; articleModal.classList.add( "active" ); articleModal.setAttribute( "aria-hidden", "false" ); document.body.style.overflow = "hidden"; } ); }); function closeArticleModal() { articleModal.classList.remove( "active" ); articleModal.setAttribute( "aria-hidden", "true" ); document.body.style.overflow = ""; } modalClose.addEventListener( "click", closeArticleModal ); articleModal.addEventListener( "click", function(event) { if (event.target === articleModal) { closeArticleModal(); } } ); const modalLinks = { privacy: "privacyModal", cookies: "cookiesModal", terms: "termsModal", security: "securityModal" }; document.querySelectorAll( 'a[href="#privacy"], a[href="#cookies"], a[href="#terms"], a[href="#security"]' ).forEach(link => { link.addEventListener( "click", function(event) { event.preventDefault(); const target = this.getAttribute("href") .replace("#", ""); const modalId = modalLinks[target]; const modal = document.getElementById(modalId); if (!modal) { return; } modal.classList.add( "active" ); document.body.style.overflow = "hidden"; } ); }); document.querySelectorAll( "[data-close-modal]" ).forEach(button => { button.addEventListener( "click", function() { const id = this.dataset.closeModal; const modal = document.getElementById(id); if (modal) { modal.classList.remove( "active" ); document.body.style.overflow = ""; } } ); }); document.querySelectorAll(".modal") .forEach(modal => { modal.addEventListener( "click", function(event) { if ( event.target === modal ) { modal.classList.remove( "active" ); document.body.style.overflow = ""; } } ); }); document.addEventListener( "keydown", function(event) { if (event.key !== "Escape") { return; } document.querySelectorAll( ".modal.active" ).forEach(modal => { modal.classList.remove( "active" ); }); articleModal.classList.remove( "active" ); document.body.style.overflow = ""; } ); const sections = document.querySelectorAll( "main section[id]" ); const navigationLinks = document.querySelectorAll( ".nav-links a" ); const navObserver = new IntersectionObserver( entries => { entries.forEach(entry => { if (!entry.isIntersecting) { return; } const id = entry.target.id; navigationLinks.forEach(link => { link.style.color = ""; if ( link.getAttribute("href") === "#" + id ) { link.style.color = "#34d399"; } }); }); }, { rootMargin: "-35% 0px -55% 0px" } ); sections.forEach(section => { navObserver.observe(section); }); document.querySelectorAll( 'a[href="#"]' ).forEach(link => { link.addEventListener( "click", event => event.preventDefault() ); }); document.querySelectorAll( 'a[target="_blank"]' ).forEach(link => { link.setAttribute( "rel", "noopener noreferrer" ); });</script>
+</body>
+</html>
