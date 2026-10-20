@@ -9,6 +9,9 @@ VektorSec
 <small>INFORMATION SECURITY</small>
 </div>
 </a>
+<?php
+// TSD-4RT | TVOJI_INICIJALI | 13.10.2026
+?>
 <nav class="nav-links" id="navLinks">
 <a href="#home">Početna</a>
 <a href="#usluge">Usluge</a>
